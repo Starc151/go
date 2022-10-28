@@ -1,13 +1,15 @@
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
-func duration(f func()) {
+func duration(f func(), num string) {
 	start := time.Now()
 	f()
 	duration := time.Since(start)
-	fmt.Println(duration)
+	fmt.Println(num, ": ", duration)
 }
 func my() {
 	for i, j := 1, 1; j <= 10; {
@@ -29,7 +31,17 @@ func forInFor() {
 		fmt.Println()
 	}
 }
+func forN() {
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 10; j++ {
+			fmt.Print(((i + 1) * (j + 1)), " ")
+		}
+		fmt.Println()
+	}
+}
+
 func main() {
-	duration(my)
-	duration(forInFor)
+	// duration(my, "my")
+	// duration(forInFor, "forInFor")
+	duration(forN, "forN")
 }

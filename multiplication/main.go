@@ -14,10 +14,10 @@ func duration(f func(), num string) {
 func my() {
 	for i, j := 1, 1; j <= 10; {
 		if j <= i*j && i*j <= j*10 {
-			fmt.Print(i*j, " ")
+			// fmt.Print(i*j, " ")
 			i++
 		} else {
-			fmt.Println()
+			// fmt.Println()
 			j++
 			i = 1
 		}
@@ -26,22 +26,22 @@ func my() {
 func forInFor() {
 	for i := 1; i <= 10; i++ {
 		for j := 1; j <= 10; j++ {
-			fmt.Print(j, " ")
+			// fmt.Print(j, " ")
 		}
-		fmt.Println()
+		// fmt.Println()
 	}
 }
 func forN() {
 	for i := 0; i < 10; i++ {
 		for j := 0; j < 10; j++ {
-			fmt.Print(((i + 1) * (j + 1)), " ")
+			// fmt.Print(((i + 1) * (j + 1)), " ")
 		}
-		fmt.Println()
+		// fmt.Println()
 	}
 }
 
 func main() {
-	// duration(my, "my")
-	// duration(forInFor, "forInFor")
+	duration(my, "my")
+	duration(forInFor, "forInFor")
 	duration(forN, "forN")
 }
